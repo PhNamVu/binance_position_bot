@@ -1,0 +1,14 @@
+app = "binance-tele-bot"
+
+primary_region = "sin"  # Singapore gần VN
+
+[build]
+  dockerfile = "Dockerfile"
+
+[processes]
+  worker = "python binance_position_bot.py"  # tên file bot của bạn
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
+  processes = ["worker"]
